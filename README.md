@@ -1,13 +1,29 @@
 # Slide Navigator
 
 Slide Navigator is a local-first Windows application for browsing and searching
-historical PowerPoint slides and building new editable presentations. This first
-milestone provides the application shell, local metadata database, import
-interface, and local Ollama connectivity checks. Slide ingestion, indexing,
-search, and deck generation are planned for later milestones.
+historical PowerPoint slides and building new editable presentations. The
+current foundation provides the application shell, local metadata database,
+import interface, and local Ollama connectivity checks. Product scope, functional
+acceptance criteria, and the frontend visual system are documented below.
 
-For the authoritative frontend visual and interaction requirements, see
-[docs/UI_DESIGN.md](docs/UI_DESIGN.md).
+## Product documentation
+
+- [Product requirements and milestone acceptance criteria](docs/PRODUCT_REQUIREMENTS.md)
+- [Authoritative UI design specification](docs/UI_DESIGN.md)
+
+## Development roadmap
+
+| Milestone | Scope |
+| --- | --- |
+| 2A | PowerPoint ingestion, slide extraction, thumbnails, and metadata schema |
+| 2B | Decks and Slides views, filtering, and editable descriptions |
+| 2C | Local Ollama AI enrichment and classification |
+| 2D | Tag Manager and bulk editing |
+| 3 | Keyword and local semantic search |
+| 4 | Editable PowerPoint assembly and export |
+
+Functional acceptance criteria for each milestone are maintained in
+[docs/PRODUCT_REQUIREMENTS.md](docs/PRODUCT_REQUIREMENTS.md).
 
 ## Requirements
 
