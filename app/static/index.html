@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ff5a00">
+    <title>Slide Navigator</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <button class="menu-button" id="menu-button" aria-label="Toggle navigation" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+      <a class="brand" href="#" data-go="home" aria-label="Slide Navigator home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="1"></rect><path d="M9.2 3.5v17m5.6-17v17M3.5 9.2h17m-17 5.6h17"></path></svg>
+        </span>
+        <span>Slide Navigator</span>
+      </a>
+      <form class="global-search" id="global-search-form" role="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg>
+        <input id="global-search" type="search" placeholder="Search your slide library" aria-label="Search your slide library">
+        <kbd>Enter</kbd>
+      </form>
+      <div class="header-actions">
+        <button class="header-icon" id="header-settings" aria-label="Settings" title="Settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="m19.4 15 .1.1 1.1.9-1.1 1.9-1.3-.5a7.7 7.7 0 0 1-1.5.9l-.2 1.4h-2.2l-.3-1.4a7.7 7.7 0 0 1-1.6-.9l-1.3.5-1.1-1.9 1.1-.9a6 6 0 0 1 0-1.8l-1.1-.9 1.1-1.9 1.3.5a7.7 7.7 0 0 1 1.6-.9l.3-1.4h2.2l.2 1.4a7.7 7.7 0 0 1 1.5.9l1.3-.5 1.1 1.9-1.1.9a6 6 0 0 1-.1 1.8Z" transform="translate(-1 -1)"></path></svg>
+        </button>
+        <span class="header-divider" aria-hidden="true"></span>
+        <button class="user-button" aria-label="Local user profile" title="Local workspace">SN</button>
+      </div>
+    </header>
+    <div class="app-body">
+      <aside class="sidebar" id="sidebar">
+        <nav class="navigation" aria-label="Main navigation">
+          <button class="nav-link" data-page="home">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"></path></svg>
+            <span>Home</span>
+          </button>
+          <div class="nav-group-label">MY WORK</div>
+          <button class="nav-link active" data-page="library" aria-current="page">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v16M9 7v13m4-16v16m4-11v11m4-7v7"></path></svg>
+            <span>Slide Library</span>
+          </button>
+          <button class="nav-link" data-page="import">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v1M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="m12 11 3 3-3 3m3-3H8"></path></svg>
+            <span>Import</span>
+          </button>
+          <button class="nav-link" data-page="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg>
+            <span>Search</span>
+          </button>
+          <button class="nav-link" data-page="builder">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h16"></path><path d="m8 2-4 3 4 3m8 1 4 3-4 3m-8 1-4 3 4 3"></path></svg>
+            <span>Deck Builder</span>
+          </button>
+          <button class="nav-link settings-link" data-page="settings">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="m19.4 15 .1.1 1.1.9-1.1 1.9-1.3-.5a7.7 7.7 0 0 1-1.5.9l-.2 1.4h-2.2l-.3-1.4a7.7 7.7 0 0 1-1.6-.9l-1.3.5-1.1-1.9 1.1-.9a6 6 0 0 1 0-1.8l-1.1-.9 1.1-1.9 1.3.5a7.7 7.7 0 0 1 1.6-.9l.3-1.4h2.2l.2 1.4a7.7 7.7 0 0 1 1.5.9l1.3-.5 1.1 1.9-1.1.9a6 6 0 0 1-.1 1.8Z" transform="translate(-1 -1)"></path></svg>
+            <span>Settings</span>
+          </button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="privacy-indicator"><span class="privacy-dot"></span><span>Files stay on this device</span></div>
+          <div class="sidebar-version">SLIDE NAVIGATOR <span>v0.1</span></div>
+        </div>
+      </aside>
+      <main class="main">
+        <section class="page hidden" id="page-home" aria-labelledby="home-title">
+          <div class="page-heading">
+            <div><div class="breadcrumb">Home</div><h1 id="home-title">Home</h1><p class="page-description">Your local workspace for finding and reusing presentation slides.</p></div>
+            <button class="button button-primary" data-go="import"><span class="plus">＋</span> Import</button>
+          </div>
+          <div class="home-content">
+            <div class="home-welcome">
+              <div class="welcome-copy">
+                <span class="eyebrow">YOUR PRESENTATION WORKSPACE</span>
+                <h2>Make your slide history useful again.</h2>
+                <p>Keep historical presentations close at hand. Import your files to get started; slide browsing, search, and deck assembly will build on your local library.</p>
+                <button class="button button-primary" data-go="import">Import presentations <span aria-hidden="true">→</span></button>
+              </div>
+              <div class="welcome-art" aria-hidden="true"><svg viewBox="0 0 190 135"><rect x="20" y="21" width="128" height="86" rx="3"></rect><path d="M84 108v13m-22 0h44"></path><rect x="38" y="37" width="80" height="54" rx="2"></rect><path d="M48 51h36M48 61h57M48 71h44"></path><circle cx="144" cy="88" r="25"></circle><path d="m162 106 15 15"></path></svg></div>
+            </div>
+            <div class="home-section-heading"><div><h2>Quick access</h2><p>Continue where you left off.</p></div></div>
+            <div class="quick-links">
+              <button class="quick-link" data-go="library"><span class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v16M9 7v13m4-16v16m4-11v11m4-7v7"></path></svg></span><span><strong>Slide Library</strong><small>Browse your local presentation library</small></span><span class="quick-arrow">›</span></button>
+              <button class="quick-link" data-go="import"><span class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0L7 9m5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"></path></svg></span><span><strong>Import presentations</strong><small>Add PowerPoint files or a folder</small></span><span class="quick-arrow">›</span></button>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="page-library" aria-labelledby="library-title">
+          <div class="page-heading library-heading">
+            <div><div class="breadcrumb">Home <span>›</span> My Work</div><h1 id="library-title">Slide Library</h1></div>
+            <button class="button button-primary" data-go="import"><span class="plus">＋</span> Import</button>
+          </div>
+          <div class="library-toolbar">
+            <label class="library-search">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg>
+              <input id="library-search" type="search" placeholder="Search presentations or slides..." aria-label="Search presentations or slides">
+              <kbd>Ctrl K</kbd>
+            </label>
+            <label class="filter-control" title="Filter by import status">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6.2 7.3v5.5l-3.6 1.8v-7.3z"></path></svg>
+              <span class="sr-only">Filter by import status</span>
+              <select id="status-filter" aria-label="Filter by import status">
+                <option value="all">All statuses</option>
+                <option value="imported">Imported</option>
+                <option value="processing">Processing</option>
+                <option value="failed">Failed</option>
+              </select>
+            </label>
+            <div class="view-toggle" role="group" aria-label="Library layout">
+              <button class="view-button active" id="grid-view" aria-label="Thumbnail grid view" aria-pressed="true" title="Thumbnail grid">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="1"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="1"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="1"></rect></svg>
+              </button>
+              <button class="view-button" id="table-view" aria-label="Compact table view" aria-pressed="false" title="Compact table">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h16M9 5v14"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div class="library-meta"><span id="library-count">0 presentations</span><label>Sort by <select id="sort-select" aria-label="Sort presentations"><option value="name">Name</option><option value="recent">Recently added</option><option value="slides">Slide count</option></select></label></div>
+          <div class="library-content grid-layout" id="library-content">
+            <div class="library-empty" id="library-empty">
+              <div class="empty-slide-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="25" rx="2"></rect><path d="M24 33v6m-8 0h16m-21-26h26"></path></svg>
+              </div>
+              <h2 id="empty-title">Your slide library is empty</h2>
+              <p id="empty-description">Import presentations to see their slides, source folders, and import status here.</p>
+              <button class="button button-secondary" data-go="import">Import presentations <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+          <div class="library-table-wrap hidden" id="library-table-wrap" aria-label="Presentation table view">
+            <table class="library-table">
+              <thead><tr><th><button data-sort="name">Presentation name <span>↕</span></button></th><th><button data-sort="slides">Slides <span>↕</span></button></th><th>Source folder</th><th>Import status</th></tr></thead>
+              <tbody id="library-table-body"></tbody>
+            </table>
+            <div class="table-empty">No presentations match your current search or filter.</div>
+          </div>
+        </section>
+
+        <section class="page hidden" id="page-import" aria-labelledby="import-title">
+          <div class="page-heading">
+            <div><div class="breadcrumb">Home <span>›</span> My Work</div><h1 id="import-title">Import presentations</h1><p class="page-description">Choose PowerPoint files or ZIP archives. Your presentations stay on this device.</p></div>
+          </div>
+          <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Drop files or folders here, or browse">
+            <div class="upload-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0L7 9m5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"></path></svg></div>
+            <h2>Drop your presentations here</h2><p>PowerPoint files and ZIP archives are supported</p>
+            <div class="drop-actions"><button class="button button-primary" id="browse-files">Browse files</button><button class="button button-secondary" id="browse-folder">Choose a folder</button></div>
+            <small>Folder selection includes subfolders where supported by your browser.</small>
+            <input id="file-input" type="file" accept=".ppt,.pptx,.zip" multiple hidden>
+            <input id="folder-input" type="file" webkitdirectory directory multiple hidden>
+          </div>
+          <div class="notice"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5m0-8h.01"></path></svg><div><strong>Import setup only</strong><p>File selection is ready, but importing and indexing presentation contents will be added in a later milestone. Nothing is uploaded or copied yet.</p></div></div>
+          <div class="selection hidden" id="selection" aria-live="polite"></div>
+        </section>
+
+        <section class="page hidden" id="page-search" aria-labelledby="search-title">
+          <div class="page-heading"><div><div class="breadcrumb">Home <span>›</span> My Work</div><h1 id="search-title">Search</h1><p class="page-description">Find a phrase, topic, or visual idea across your presentation library.</p></div></div>
+          <form class="search-page-form" id="search-page-form"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg><input id="search-page-input" type="search" placeholder="Search slides and presentations..." aria-label="Search slides and presentations"><button class="button button-primary">Search</button></form>
+          <div class="notice"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5m0-8h.01"></path></svg><div><strong>Slide search is not available yet</strong><p>Import and indexing will be added in a later milestone. Presentation contents are not sent to any external service.</p></div></div>
+        </section>
+
+        <section class="page hidden" id="page-builder" aria-labelledby="builder-title">
+          <div class="page-heading"><div><div class="breadcrumb">Home <span>›</span> My Work</div><h1 id="builder-title">Deck Builder</h1><p class="page-description">Assemble selected slides into a new editable presentation.</p></div></div>
+          <div class="feature-empty"><div class="empty-slide-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 10h34M7 20h34M7 30h34M7 40h34"></path><path d="m13 5-6 5 6 5m22 0 6 5-6 5m-22 0-6 5 6 5"></path></svg></div><h2>Deck Builder is coming soon</h2><p>Once presentations can be indexed, you’ll be able to select slides and export an editable PowerPoint deck.</p><button class="button button-secondary" data-go="library">Go to Slide Library</button></div>
+        </section>
+
+        <section class="page hidden" id="page-settings" aria-labelledby="settings-title">
+          <div class="page-heading"><div><div class="breadcrumb">Home <span>›</span> Preferences</div><h1 id="settings-title">Settings</h1><p class="page-description">Manage local AI connectivity and your workspace.</p></div></div>
+          <div class="settings-card">
+            <div class="settings-card-head"><div class="settings-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.6 5.6 7 7m10 10 1.4 1.4m0-12.8L17 7M7 17l-1.4 1.4"></path><circle cx="12" cy="12" r="5"></circle></svg></div><div><h2>Local AI · Ollama</h2><p>Models run on your computer. No cloud API or key required.</p></div><button class="button button-secondary refresh-button" id="refresh-ollama"><span aria-hidden="true">↻</span> Refresh</button></div>
+            <div class="connection-row"><div><strong>Ollama service</strong><small id="ollama-url">http://127.0.0.1:11434</small></div><span class="status-pill checking" id="ollama-connection">Checking…</span></div>
+            <div class="models-heading">REQUIRED MODELS</div><div id="model-list" class="model-list"><div class="model-row"><span>Loading model status…</span></div></div>
+            <div class="settings-foot" id="ollama-message">Checking your local Ollama service.</div>
+          </div>
+          <div class="privacy-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-4.4-8-11V5l8-3 8 3v5c0 6.6-8 11-8 11Z"></path><path d="m9 12 2 2 4-4"></path></svg><div><strong>Your presentations are private</strong><p>Slide Navigator does not send presentation content to external services.</p></div></div>
+        </section>
+      </main>
+    </div>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
