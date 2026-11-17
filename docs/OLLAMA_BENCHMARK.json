@@ -1,0 +1,517 @@
+{
+  "fixture": "Synthetic two-slide quarterly review; no private presentation content",
+  "models": [
+    {
+      "model": "qwen3:4b",
+      "status": "completed",
+      "wall_seconds": 27.709020799957216,
+      "counts": {
+        "completed": 3,
+        "failed": 0,
+        "skipped": 0
+      },
+      "generation_tokens_per_second": 27.985972836927324,
+      "items": [
+        {
+          "id": "86d6b02e-9c7b-455f-b66f-8f828a938553",
+          "job_id": "f81fc935-442e-4b72-aca3-260b0094fb5c",
+          "entity_type": "deck",
+          "entity_id": "4410378e-2620-4926-b2bc-789fc45e5e14",
+          "deck_id": "4410378e-2620-4926-b2bc-789fc45e5e14",
+          "status": "completed",
+          "error": null,
+          "result_id": "ceadbd5d-42b5-4eea-a4cc-fcd8feb7b894",
+          "started_at": "2026-11-16T22:30:53.041546+00:00",
+          "completed_at": "2026-11-16T22:31:05.460049+00:00"
+        },
+        {
+          "id": "a4ef826a-40cb-4bc8-bbbe-30536d55340c",
+          "job_id": "f81fc935-442e-4b72-aca3-260b0094fb5c",
+          "entity_type": "slide",
+          "entity_id": "20a57429-5a6b-4b2b-9d11-640b943f43de",
+          "deck_id": "4410378e-2620-4926-b2bc-789fc45e5e14",
+          "status": "completed",
+          "error": null,
+          "result_id": "703629de-90cf-4988-bbfd-fa90e67dc1b9",
+          "started_at": "2026-11-16T22:31:05.462686+00:00",
+          "completed_at": "2026-11-16T22:31:13.062074+00:00"
+        },
+        {
+          "id": "28e4d404-b2af-4b14-9747-714e5ee4462c",
+          "job_id": "f81fc935-442e-4b72-aca3-260b0094fb5c",
+          "entity_type": "slide",
+          "entity_id": "617299f3-97d4-412f-9322-6fa27d6690c0",
+          "deck_id": "4410378e-2620-4926-b2bc-789fc45e5e14",
+          "status": "completed",
+          "error": null,
+          "result_id": "2691d771-a385-435d-9b66-f14b936d50b1",
+          "started_at": "2026-11-16T22:31:13.065535+00:00",
+          "completed_at": "2026-11-16T22:31:20.540209+00:00"
+        }
+      ],
+      "results": [
+        {
+          "entity_type": "deck",
+          "suggestion": {
+            "title": "Northwind quarterly business review",
+            "description": "Quarterly business review presenting revenue growth and margin improvements. The team discussed revenue trends and regional performance. Next steps include monthly regional performance reviews, customer feedback documentation, and tracking progress against the operating plan without new budget or delivery dates.",
+            "organisation": "Northwind quarterly business review. Revenue increased by 12 percent compared with the previous quarter. Operating margin improved. The team discussed the revenue trend and regional performance.",
+            "organisation_evidence": "Northwind quarterly business review. Revenue increased by 12 percent compared with the previous quarter. Operating margin improved. The team discussed the revenue trend and regional performance.",
+            "tag_ids": [],
+            "new_tags": [],
+            "keywords": [
+              "revenue",
+              "operating margin",
+              "regional performance"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 191,
+              "eval_duration": 6659071000,
+              "prompt_eval_count": 552,
+              "prompt_eval_duration": 1078910000,
+              "load_duration": 4630081300,
+              "total_duration": 12383648200,
+              "wall_seconds": 12.397408499964513
+            }
+          ]
+        },
+        {
+          "entity_type": "slide",
+          "suggestion": {
+            "title": "Slide 1: Northwind Quarterly Business Review",
+            "description": "Northwind quarterly business review. Revenue increased by 12 percent compared with the previous quarter. Operating margin improved. The team discussed the revenue trend and regional performance.",
+            "organisation": "Northwind quarterly business review. Revenue increased by 12 percent compared with the previous quarter. Operating margin improved. The team discussed the revenue trend and regional performance.",
+            "organisation_evidence": "Northwind quarterly business review. Revenue increased by 12 percent compared with the previous quarter. Operating margin improved. The team discussed the revenue trend and regional performance.",
+            "tag_ids": [],
+            "new_tags": [],
+            "keywords": [
+              "revenue",
+              "operating margin",
+              "regional performance"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 176,
+              "eval_duration": 6283224000,
+              "prompt_eval_count": 250,
+              "prompt_eval_duration": 220650000,
+              "load_duration": 12148400,
+              "total_duration": 7534407000,
+              "wall_seconds": 7.558569699991494
+            }
+          ]
+        },
+        {
+          "entity_type": "slide",
+          "suggestion": {
+            "title": "Slide 2: Northwind Next Steps",
+            "description": "The team will review regional performance monthly, document customer feedback, and track progress against the existing operating plan. No new budget or delivery dates were agreed.",
+            "organisation": "Northwind next steps. The team will review regional performance monthly, document customer feedback, and track progress against the existing operating plan. No new budget or delivery dates were agreed",
+            "organisation_evidence": "Northwind next steps. The team will review regional performance monthly, document customer feedback, and track progress against the existing operating plan. No new budget or delivery dates were agreed.",
+            "tag_ids": [],
+            "new_tags": [],
+            "keywords": [
+              "next steps",
+              "regional performance",
+              "customer feedback",
+              "operating plan"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 180,
+              "eval_duration": 6603211000,
+              "prompt_eval_count": 252,
+              "prompt_eval_duration": 185655000,
+              "load_duration": 30508000,
+              "total_duration": 7432550700,
+              "wall_seconds": 7.451057599973865
+            }
+          ]
+        }
+      ],
+      "resource_snapshots": [
+        {
+          "models": [
+            {
+              "name": "qwen3:4b",
+              "model": "qwen3:4b",
+              "size": 3877571133,
+              "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen3",
+                "families": [
+                  "qwen3"
+                ],
+                "parameter_size": "4.0B",
+                "quantization_level": "Q4_K_M"
+              },
+              "expires_at": "2026-11-16T22:36:05.4463721Z",
+              "size_vram": 3877571133,
+              "context_length": 8192,
+              "runner": "llamacpp"
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "qwen3:4b",
+              "model": "qwen3:4b",
+              "size": 3877571133,
+              "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen3",
+                "families": [
+                  "qwen3"
+                ],
+                "parameter_size": "4.0B",
+                "quantization_level": "Q4_K_M"
+              },
+              "expires_at": "2026-11-16T22:36:13.0274012Z",
+              "size_vram": 3877571133,
+              "context_length": 8192,
+              "runner": "llamacpp"
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "qwen3:4b",
+              "model": "qwen3:4b",
+              "size": 3877571133,
+              "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen3",
+                "families": [
+                  "qwen3"
+                ],
+                "parameter_size": "4.0B",
+                "quantization_level": "Q4_K_M"
+              },
+              "expires_at": "2026-11-16T22:36:20.5249933Z",
+              "size_vram": 3877571133,
+              "context_length": 8192,
+              "runner": "llamacpp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "qwen2.5-coder:14b",
+      "status": "completed",
+      "wall_seconds": 102.39963489997899,
+      "counts": {
+        "completed": 3,
+        "failed": 0,
+        "skipped": 0
+      },
+      "generation_tokens_per_second": 9.1881092038334,
+      "items": [
+        {
+          "id": "0d4d0a16-434a-4da4-8a85-7f57afc0929b",
+          "job_id": "acc91faf-d778-49f9-a7c3-24bb5d4ead1e",
+          "entity_type": "deck",
+          "entity_id": "f00da537-fec9-4e02-868b-dde6e6e9e900",
+          "deck_id": "f00da537-fec9-4e02-868b-dde6e6e9e900",
+          "status": "completed",
+          "error": null,
+          "result_id": "0d710605-1fe5-428c-8b9c-6f45cd09e6e4",
+          "started_at": "2026-11-16T22:33:57.479128+00:00",
+          "completed_at": "2026-11-16T22:34:39.553267+00:00"
+        },
+        {
+          "id": "e47855a3-6c7a-4231-b8a3-ecc19753ec0f",
+          "job_id": "acc91faf-d778-49f9-a7c3-24bb5d4ead1e",
+          "entity_type": "slide",
+          "entity_id": "54368c82-1049-47c1-99c2-c8ca6a5a7f24",
+          "deck_id": "f00da537-fec9-4e02-868b-dde6e6e9e900",
+          "status": "completed",
+          "error": null,
+          "result_id": "e2fdeb53-fcf8-4226-9b2a-611b7a855e6a",
+          "started_at": "2026-11-16T22:34:39.557697+00:00",
+          "completed_at": "2026-11-16T22:35:13.371121+00:00"
+        },
+        {
+          "id": "7e042e82-011f-4ea6-a42b-d78f9afd5ec1",
+          "job_id": "acc91faf-d778-49f9-a7c3-24bb5d4ead1e",
+          "entity_type": "slide",
+          "entity_id": "f29d927c-f09f-40d0-84cf-69bbf5c1d09d",
+          "deck_id": "f00da537-fec9-4e02-868b-dde6e6e9e900",
+          "status": "completed",
+          "error": null,
+          "result_id": "dbedcbf8-237e-4053-8904-6f014aa72b59",
+          "started_at": "2026-11-16T22:35:13.374185+00:00",
+          "completed_at": "2026-11-16T22:35:39.636299+00:00"
+        }
+      ],
+      "results": [
+        {
+          "entity_type": "deck",
+          "suggestion": {
+            "title": "Northwind quarterly business review",
+            "description": "A presentation reviewing Northwind's business performance for the quarter, highlighting revenue growth and improved operating margins. The team discussed revenue trends and regional performance. Next steps include monthly reviews of regional performance, documenting customer feedback, and tracking progress against the operating plan.",
+            "organisation": "Northwind",
+            "organisation_evidence": "Northwind quarterly business review",
+            "tag_ids": [],
+            "new_tags": [
+              {
+                "name": "Business Review",
+                "tag_type": "deck_type"
+              },
+              {
+                "name": "Revenue Growth",
+                "tag_type": "topic"
+              },
+              {
+                "name": "Operating Margin",
+                "tag_type": "topic"
+              },
+              {
+                "name": "Regional Performance",
+                "tag_type": "topic"
+              },
+              {
+                "name": "Next Steps",
+                "tag_type": "deck_type"
+              }
+            ],
+            "keywords": [
+              "Northwind",
+              "quarterly",
+              "business",
+              "review",
+              "revenue",
+              "growth",
+              "operating",
+              "margin",
+              "regional",
+              "performance",
+              "next",
+              "steps"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 278,
+              "eval_duration": 30024515000,
+              "prompt_eval_count": 568,
+              "prompt_eval_duration": 1960445000,
+              "load_duration": 10001815600,
+              "total_duration": 42010246800,
+              "wall_seconds": 42.042525199998636
+            }
+          ]
+        },
+        {
+          "entity_type": "slide",
+          "suggestion": {
+            "title": "Northwind Quarterly Business Review",
+            "description": "This slide presents the Northwind quarterly business review, highlighting a 12 percent increase in revenue compared to the previous quarter and an improved operating margin. The team also discussed revenue trends and regional performance.",
+            "organisation": "Northwind",
+            "organisation_evidence": "Northwind quarterly business review.",
+            "tag_ids": [],
+            "new_tags": [
+              {
+                "name": "Business Review",
+                "tag_type": "topic"
+              },
+              {
+                "name": "Financial Performance",
+                "tag_type": "topic"
+              },
+              {
+                "name": "Revenue Growth",
+                "tag_type": "topic"
+              },
+              {
+                "name": "Operating Margin",
+                "tag_type": "topic"
+              },
+              {
+                "name": "Team Discussion",
+                "tag_type": "topic"
+              },
+              {
+                "name": "Regional Performance",
+                "tag_type": "topic"
+              }
+            ],
+            "keywords": [
+              "Northwind",
+              "quarterly",
+              "business review",
+              "revenue",
+              "growth",
+              "operating margin",
+              "team discussion",
+              "regional performance"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 274,
+              "eval_duration": 31566527000,
+              "prompt_eval_count": 269,
+              "prompt_eval_duration": 620849000,
+              "load_duration": 22796900,
+              "total_duration": 33732182600,
+              "wall_seconds": 33.75892320001731
+            }
+          ]
+        },
+        {
+          "entity_type": "slide",
+          "suggestion": {
+            "title": "Northwind Next Steps",
+            "description": "The team will review regional performance monthly, document customer feedback, and track progress against the existing operating plan. No new budget or delivery dates were agreed.",
+            "organisation": "Northwind",
+            "organisation_evidence": "Northwind next steps.",
+            "tag_ids": [],
+            "new_tags": [
+              {
+                "name": "Northwind",
+                "tag_type": "topic"
+              },
+              {
+                "name": "Team Review",
+                "tag_type": "topic"
+              },
+              {
+                "name": "Regional Performance",
+                "tag_type": "topic"
+              },
+              {
+                "name": "Customer Feedback",
+                "tag_type": "topic"
+              },
+              {
+                "name": "Operating Plan",
+                "tag_type": "topic"
+              }
+            ],
+            "keywords": [
+              "Northwind",
+              "team",
+              "review",
+              "regional",
+              "performance",
+              "customer",
+              "feedback",
+              "operating",
+              "plan"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 240,
+              "eval_duration": 24607324000,
+              "prompt_eval_count": 271,
+              "prompt_eval_duration": 494784000,
+              "load_duration": 16308300,
+              "total_duration": 26210715000,
+              "wall_seconds": 26.223170000012033
+            }
+          ]
+        }
+      ],
+      "resource_snapshots": [
+        {
+          "models": [
+            {
+              "name": "qwen2.5-coder:14b",
+              "model": "qwen2.5-coder:14b",
+              "size": 10425372507,
+              "digest": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen2",
+                "families": [
+                  "qwen2"
+                ],
+                "parameter_size": "14.8B",
+                "quantization_level": "Q4_K_M"
+              },
+              "expires_at": "2026-11-16T22:39:39.5277898Z",
+              "size_vram": 10425372507,
+              "context_length": 8192,
+              "runner": "llamacpp"
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "qwen2.5-coder:14b",
+              "model": "qwen2.5-coder:14b",
+              "size": 10425372507,
+              "digest": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen2",
+                "families": [
+                  "qwen2"
+                ],
+                "parameter_size": "14.8B",
+                "quantization_level": "Q4_K_M"
+              },
+              "expires_at": "2026-11-16T22:40:13.3280863Z",
+              "size_vram": 10425372507,
+              "context_length": 8192,
+              "runner": "llamacpp"
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "qwen2.5-coder:14b",
+              "model": "qwen2.5-coder:14b",
+              "size": 10425372507,
+              "digest": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen2",
+                "families": [
+                  "qwen2"
+                ],
+                "parameter_size": "14.8B",
+                "quantization_level": "Q4_K_M"
+              },
+              "expires_at": "2026-11-16T22:40:39.6055701Z",
+              "size_vram": 10425372507,
+              "context_length": 8192,
+              "runner": "llamacpp"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

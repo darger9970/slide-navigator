@@ -1,0 +1,226 @@
+{
+  "model": "qwen2.5-coder:14b",
+  "wall_seconds": 101.5357437999919,
+  "status": "completed",
+  "counts": {
+    "completed": 3,
+    "failed": 0,
+    "skipped": 0
+  },
+  "items": [
+    {
+      "id": "0af4d617-a0a0-4697-a1cf-88a69b6737c7",
+      "job_id": "363019a4-0d17-403f-8c2b-619b2d00a060",
+      "entity_type": "deck",
+      "entity_id": "7ef2ffbe-b603-4040-90fc-761afa01aab6",
+      "deck_id": "7ef2ffbe-b603-4040-90fc-761afa01aab6",
+      "status": "completed",
+      "error": null,
+      "result_id": "04d21fd3-e5c9-4dd0-8ee3-fc31644e319e",
+      "started_at": "2026-11-17T10:22:40.994377+00:00",
+      "completed_at": "2026-11-17T10:23:16.294900+00:00",
+      "review_decision": "pending"
+    },
+    {
+      "id": "b4c4153f-1396-4c00-a7be-c2a6a042b71f",
+      "job_id": "363019a4-0d17-403f-8c2b-619b2d00a060",
+      "entity_type": "slide",
+      "entity_id": "2413e228-90cb-4d4d-a73b-0e924a27b332",
+      "deck_id": "7ef2ffbe-b603-4040-90fc-761afa01aab6",
+      "status": "completed",
+      "error": null,
+      "result_id": "a2af68dc-1d93-4c2e-97f5-3ea82479ce6b",
+      "started_at": "2026-11-17T10:23:16.304655+00:00",
+      "completed_at": "2026-11-17T10:23:43.310846+00:00",
+      "review_decision": "pending"
+    },
+    {
+      "id": "2c26f063-b660-44ed-8f8d-cb426aa0fdf2",
+      "job_id": "363019a4-0d17-403f-8c2b-619b2d00a060",
+      "entity_type": "slide",
+      "entity_id": "9f2ec5ca-6c41-40fd-9e31-1eef00729229",
+      "deck_id": "7ef2ffbe-b603-4040-90fc-761afa01aab6",
+      "status": "completed",
+      "error": null,
+      "result_id": "fa2f55ab-3390-4ddb-9e05-7ba517516c5e",
+      "started_at": "2026-11-17T10:23:43.318356+00:00",
+      "completed_at": "2026-11-17T10:24:21.918962+00:00",
+      "review_decision": "pending"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "deck",
+      "suggestion": {
+        "title": "Northwind telecom quarterly review",
+        "description": "A presentation reviewing Northwind Telecom's quarterly performance, focusing on revenue growth, customer retention, and regional analysis. The deck outlines next steps for ongoing monitoring and reporting.",
+        "organisation": "Northwind",
+        "organisation_evidence": "Northwind operates in the telecom industry.",
+        "tag_ids": [],
+        "new_tags": [
+          {
+            "name": "telecom",
+            "tag_type": "topic"
+          },
+          {
+            "name": "quarterly review",
+            "tag_type": "topic"
+          },
+          {
+            "name": "performance analysis",
+            "tag_type": "topic"
+          }
+        ],
+        "keywords": [
+          "Northwind",
+          "telecom",
+          "quarterly review",
+          "performance",
+          "revenue",
+          "customer retention",
+          "regional analysis",
+          "next steps"
+        ],
+        "limited": false,
+        "limitation": "",
+        "purpose": "to review quarterly performance",
+        "industry": "telecom",
+        "industry_evidence": "Northwind operates in the telecom industry."
+      },
+      "metrics": [
+        {
+          "eval_count": 233,
+          "eval_duration": 23165295000,
+          "prompt_eval_count": 691,
+          "prompt_eval_duration": 2089474000,
+          "load_duration": 9967736500,
+          "total_duration": 35252883400,
+          "wall_seconds": 35.269141700002365
+        }
+      ]
+    },
+    {
+      "kind": "slide",
+      "suggestion": {
+        "title": "Northwind telecom quarterly review",
+        "description": "This slide reviews Northwind's quarterly performance in the telecom industry, highlighting a 12 percent increase in revenue and stable customer retention. It also notes that regional results varied and require further analysis. No future revenue targets or commercial guarantees are mentioned.",
+        "organisation": "Northwind",
+        "organisation_evidence": "Northwind operates in the telecom industry.",
+        "tag_ids": [],
+        "new_tags": [
+          {
+            "name": "telecom",
+            "tag_type": "topic"
+          },
+          {
+            "name": "quarterly review",
+            "tag_type": "topic"
+          },
+          {
+            "name": "financial performance",
+            "tag_type": "topic"
+          }
+        ],
+        "keywords": [
+          "Northwind",
+          "telecom",
+          "quarterly review",
+          "revenue increase",
+          "customer retention",
+          "regional results",
+          "further analysis"
+        ],
+        "limited": false,
+        "limitation": "",
+        "purpose": null,
+        "industry": "telecom",
+        "industry_evidence": "Northwind operates in the telecom industry."
+      },
+      "metrics": [
+        {
+          "eval_count": 247,
+          "eval_duration": 24750248000,
+          "prompt_eval_count": 397,
+          "prompt_eval_duration": 644737000,
+          "load_duration": 22044700,
+          "total_duration": 26932488300,
+          "wall_seconds": 26.96038479998242
+        }
+      ]
+    },
+    {
+      "kind": "slide",
+      "suggestion": {
+        "title": "Northwind Telecom Quarterly Review - Slide 2",
+        "description": "Discusses the organisation's next steps including monthly regional performance review, documenting customer feedback, and validating the reporting pack with Finance. Operations is responsible for reporting. No new budget, staffing, deployment, or workshop approvals have been made.",
+        "organisation": null,
+        "organisation_evidence": null,
+        "tag_ids": [],
+        "new_tags": [
+          {
+            "name": "Northwind",
+            "tag_type": "topic"
+          },
+          {
+            "name": "Telecom",
+            "tag_type": "topic"
+          },
+          {
+            "name": "Quarterly Review",
+            "tag_type": "topic"
+          },
+          {
+            "name": "Regional Performance",
+            "tag_type": "topic"
+          },
+          {
+            "name": "Customer Feedback",
+            "tag_type": "topic"
+          },
+          {
+            "name": "Reporting",
+            "tag_type": "topic"
+          },
+          {
+            "name": "Finance",
+            "tag_type": "topic"
+          },
+          {
+            "name": "Operations",
+            "tag_type": "topic"
+          }
+        ],
+        "keywords": [
+          "Northwind",
+          "telecom",
+          "quarterly review",
+          "regional performance",
+          "customer feedback",
+          "reporting",
+          "finance",
+          "operations",
+          "next steps",
+          "proposals"
+        ],
+        "limited": true,
+        "limitation": "Unsupported organisation suggestion removed; verify remaining narrative facts.",
+        "purpose": null,
+        "industry": null,
+        "industry_evidence": null
+      },
+      "metrics": [
+        {
+          "eval_count": 346,
+          "eval_duration": 36610194000,
+          "prompt_eval_count": 396,
+          "prompt_eval_duration": 612946000,
+          "load_duration": 18996200,
+          "total_duration": 38538179100,
+          "wall_seconds": 38.56341189995874
+        }
+      ]
+    }
+  ],
+  "existing_title_unchanged": true,
+  "metadata_not_accepted": true
+}

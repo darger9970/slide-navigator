@@ -1,0 +1,570 @@
+{
+  "sample_kind": "Synthetic representative scenarios; not a production-corpus quality study",
+  "references": {
+    "business": [
+      "Northwind quarterly review. Revenue increased by 12 percent against the previous quarter. Operating margin improved, but no margin percentage was recorded. Customer retention remained stable. Regional performance varied and the team requested further analysis before attributing causes. This review describes historical performance; it is not a sales forecast or a claim of guaranteed future growth.",
+      "Northwind next steps. The team will review regional performance monthly and document customer feedback. Operations owns the reporting process. Finance will validate the next reporting pack. No new budget, delivery date or staffing commitment was approved. A proposed workshop remains subject to client agreement. The presentation does not establish a target revenue increase for next quarter."
+    ],
+    "technical": [
+      "Contoso platform architecture. The current prototype uses FastAPI, SQLite and local file storage. Browser clients request metadata over HTTP. Presentation files remain editable and are not modified by indexing. The prototype has been exercised on Windows. Linux container compatibility is a design goal, but a production Azure deployment has not been tested. No cloud AI service is required.",
+      "Contoso architecture review. Current keyword search operates on extracted text. Semantic search is outside the prototype scope. The team proposes persistent storage, deployment checks and workload measurement before production rollout. The presentation contains no measured availability percentage, throughput guarantee or approved migration deadline. Retaining human approval for generated metadata is a requirement, not evidence that automated classification is always correct."
+    ],
+    "sparse": [
+      "Roadmap"
+    ]
+  },
+  "models": [
+    {
+      "model": "qwen3:4b",
+      "wall_seconds": 62.6626760000363,
+      "status": "completed",
+      "counts": {
+        "completed": 8,
+        "failed": 0,
+        "skipped": 0
+      },
+      "mean_seconds_per_slide": 7.8733636,
+      "mean_seconds_per_model_analysed_slide": 9.8360705,
+      "results": [
+        {
+          "sample": "technical.pptx",
+          "kind": "deck",
+          "wall_seconds": 11.925653,
+          "suggestion": {
+            "title": "technical review",
+            "description": "Contoso platform architecture review",
+            "organisation": "Contoso platform architecture. The current prototype uses FastAPI, SQLite and local file storage. Browser clients request metadata over HTTP. Presentation files remain editable and are not modified by",
+            "organisation_evidence": "Contoso platform architecture. The current prototype uses FastAPI, SQLite and local file storage. Browser clients request metadata over HTTP. Presentation files remain editable and are not modified by indexing. The prototype has been exercised on Windows. Linux container compatibility is a design goal, but a production Azure deployment has not been tested. No cloud AI service is required.",
+            "tag_ids": [
+              "architecture"
+            ],
+            "new_tags": [],
+            "keywords": [
+              "FastAPI",
+              "SQLite",
+              "local file storage",
+              "HTTP",
+              "Windows",
+              "Linux container",
+              "Azure"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 207,
+              "eval_duration": 7500440000,
+              "prompt_eval_count": 771,
+              "prompt_eval_duration": 1084629000,
+              "load_duration": 3290228000,
+              "total_duration": 11895728400,
+              "wall_seconds": 11.907703600008972
+            }
+          ]
+        },
+        {
+          "sample": "sparse.pptx",
+          "kind": "deck",
+          "wall_seconds": 0.01177,
+          "suggestion": {
+            "title": "",
+            "description": "Insufficient extracted text for a reliable description.",
+            "organisation": null,
+            "organisation_evidence": null,
+            "tag_ids": [],
+            "new_tags": [],
+            "keywords": [],
+            "limited": true,
+            "limitation": "Text-only analysis is limited; inspect the slide preview and original presentation."
+          },
+          "metrics": []
+        },
+        {
+          "sample": "business.pptx",
+          "kind": "deck",
+          "wall_seconds": 11.000463,
+          "suggestion": {
+            "title": "business review",
+            "description": "Northwind quarterly review. Revenue increased by 12 percent against the previous quarter. Operating margin improved, but no margin percentage was recorded. Customer retention remained stable. Regional performance varied and the team requested further analysis before attributing causes. This review describes historical performance; it is not a sales forecast or a claim of guaranteed future growth.",
+            "organisation": "Northwind quarterly review. Revenue increased by 12 percent against the previous quarter. Operating margin improved, but no margin percentage was recorded. Customer retention remained stable. Regional",
+            "organisation_evidence": "Northwind quarterly review. Revenue increased by 12 percent against the previous quarter. Operating margin improved, but no margin percentage was recorded. Customer retention remained stable. Regional performance varied and the team requested further analysis before attributing causes. This review describes historical performance; it is not a sales forecast or a claim of guaranteed future growth.",
+            "tag_ids": [
+              "architecture"
+            ],
+            "new_tags": [],
+            "keywords": [
+              "revenue",
+              "operating margin",
+              "customer retention",
+              "regional performance"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 251,
+              "eval_duration": 9001607000,
+              "prompt_eval_count": 761,
+              "prompt_eval_duration": 622527000,
+              "load_duration": 21114300,
+              "total_duration": 10956836700,
+              "wall_seconds": 10.97132979996968
+            }
+          ]
+        },
+        {
+          "sample": "technical.pptx",
+          "kind": "slide",
+          "wall_seconds": 12.47917,
+          "suggestion": {
+            "title": "Slide 1: Contoso Platform Architecture",
+            "description": "Contoso platform architecture. The current prototype uses FastAPI, SQLite and local file storage. Browser clients request metadata over HTTP. Presentation files remain editable and are not modified by indexing. The prototype has been exercised on Windows. Linux container compatibility is a design goal, but a production Azure deployment has not been tested. No cloud AI service is required.",
+            "organisation": "Contoso platform architecture. The current prototype uses FastAPI, SQLite and local file storage. Browser clients request metadata over HTTP. Presentation files remain editable and are not modified by",
+            "organisation_evidence": "Contoso platform architecture. The current prototype uses FastAPI, SQLite and local file storage. Browser clients request metadata over HTTP. Presentation files remain editable and are not modified by indexing. The prototype has been exercised on Windows. Linux container compatibility is a design goal, but a production Azure deployment has not been tested. No cloud AI service is required.",
+            "tag_ids": [
+              "approach"
+            ],
+            "new_tags": [],
+            "keywords": [
+              "FastAPI",
+              "SQLite",
+              "local file storage",
+              "HTTP",
+              "browser clients",
+              "presentation files",
+              "Windows",
+              "Linux container",
+              "Azure"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 293,
+              "eval_duration": 10274449000,
+              "prompt_eval_count": 447,
+              "prompt_eval_duration": 521169999,
+              "load_duration": 18357500,
+              "total_duration": 12430435500,
+              "wall_seconds": 12.451327799994033
+            }
+          ]
+        },
+        {
+          "sample": "technical.pptx",
+          "kind": "slide",
+          "wall_seconds": 10.242742,
+          "suggestion": {
+            "title": "Slide 2: Contoso Architecture Review",
+            "description": "Current keyword search operates on extracted text. Semantic search is outside prototype scope. Team proposes persistent storage, deployment checks, and workload measurement before production rollout. Presentation lacks measured availability, throughput guarantees, or approved migration deadlines. Retaining human approval for generated metadata is required, not evidence of automated classification accuracy.",
+            "organisation": "Contoso architecture review. Current keyword search operates on extracted text. Semantic search is outside the prototype scope. The team proposes persistent storage, deployment checks and workload\u6d4b\u91cf",
+            "organisation_evidence": "Contoso architecture review. Current keyword search operates on extracted text. Semantic search is outside the prototype scope. The team proposes persistent storage, deployment checks and workload measurement before production rollout.",
+            "tag_ids": [
+              "approach"
+            ],
+            "new_tags": [],
+            "keywords": [
+              "Contoso",
+              "architecture",
+              "keyword search",
+              "semantic search",
+              "persistent storage",
+              "deployment checks",
+              "workload measurement"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 242,
+              "eval_duration": 8585909000,
+              "prompt_eval_count": 449,
+              "prompt_eval_duration": 271681000,
+              "load_duration": 19539200,
+              "total_duration": 10192113300,
+              "wall_seconds": 10.210482700029388
+            }
+          ]
+        },
+        {
+          "sample": "sparse.pptx",
+          "kind": "slide",
+          "wall_seconds": 0.022536,
+          "suggestion": {
+            "title": "",
+            "description": "Insufficient extracted text for a reliable description.",
+            "organisation": null,
+            "organisation_evidence": null,
+            "tag_ids": [],
+            "new_tags": [],
+            "keywords": [],
+            "limited": true,
+            "limitation": "Text-only analysis is limited; inspect the slide preview and original presentation."
+          },
+          "metrics": []
+        },
+        {
+          "sample": "business.pptx",
+          "kind": "slide",
+          "wall_seconds": 9.376597,
+          "suggestion": {
+            "title": "Slide 1: Northwind Quarterly Review",
+            "description": "Northwind quarterly review. Revenue increased by 12 percent against the previous quarter. Operating margin improved, but no margin percentage was recorded. Customer retention remained stable. Regional performance varied and the team requested further analysis before attributing causes. This review describes historical performance; it is not a sales forecast or a claim of guaranteed future growth.",
+            "organisation": null,
+            "organisation_evidence": null,
+            "tag_ids": [
+              "summary"
+            ],
+            "new_tags": [],
+            "keywords": [
+              "revenue",
+              "12 percent",
+              "operating margin",
+              "customer retention",
+              "regional performance"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 255,
+              "eval_duration": 9009013000,
+              "prompt_eval_count": 445,
+              "prompt_eval_duration": 266077000,
+              "load_duration": 10725300,
+              "total_duration": 9300206600,
+              "wall_seconds": 9.343552500009537
+            }
+          ]
+        },
+        {
+          "sample": "business.pptx",
+          "kind": "slide",
+          "wall_seconds": 7.245773,
+          "suggestion": {
+            "title": "Slide 2: Northwind Next Steps",
+            "description": "The team will review regional performance monthly and document customer feedback. Operations owns the reporting process. Finance will validate the next reporting pack. No new budget, delivery date or staffing commitment was approved. A proposed workshop remains subject to client agreement. The presentation does not establish a target revenue increase for next quarter.",
+            "organisation": "Operations owns the reporting process. Finance will validate the next reporting pack.",
+            "organisation_evidence": "Operations owns the reporting process. Finance will validate the next reporting pack.",
+            "tag_ids": [
+              "operations"
+            ],
+            "new_tags": [],
+            "keywords": [
+              "operations",
+              "reporting",
+              "finance",
+              "workshop"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 172,
+              "eval_duration": 6870002000,
+              "prompt_eval_count": 443,
+              "prompt_eval_duration": 272925000,
+              "load_duration": 19053400,
+              "total_duration": 7189471600,
+              "wall_seconds": 7.212042000028305
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "qwen2.5-coder:14b",
+      "wall_seconds": 149.981240299996,
+      "status": "completed",
+      "counts": {
+        "completed": 8,
+        "failed": 0,
+        "skipped": 0
+      },
+      "mean_seconds_per_slide": 18.0973034,
+      "mean_seconds_per_model_analysed_slide": 22.609735,
+      "results": [
+        {
+          "sample": "technical.pptx",
+          "kind": "deck",
+          "wall_seconds": 33.74191,
+          "suggestion": {
+            "title": "technical review",
+            "description": "A technical review presentation discussing the Contoso platform architecture, including the use of FastAPI, SQLite, and local file storage. The presentation also covers the current keyword search capabilities and the team's proposal for persistent storage, deployment checks, and workload measurement before production rollout.",
+            "organisation": null,
+            "organisation_evidence": null,
+            "tag_ids": [
+              "architecture"
+            ],
+            "new_tags": [],
+            "keywords": [
+              "Contoso",
+              "platform architecture",
+              "FastAPI",
+              "SQLite",
+              "local file storage",
+              "keyword search",
+              "persistent storage",
+              "deployment checks",
+              "workload measurement"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 160,
+              "eval_duration": 16839644000,
+              "prompt_eval_count": 799,
+              "prompt_eval_duration": 2923668000,
+              "load_duration": 13862595400,
+              "total_duration": 33673109900,
+              "wall_seconds": 33.70648069999879
+            }
+          ]
+        },
+        {
+          "sample": "business.pptx",
+          "kind": "deck",
+          "wall_seconds": 25.037031,
+          "suggestion": {
+            "title": "business review",
+            "description": "A business review presentation discussing Northwind's quarterly performance, including revenue growth, operating margin, customer retention, and regional performance analysis. The next steps involve monthly regional reviews, documentation of customer feedback, and validation of the reporting process by Finance. No new budget, delivery date, or staffing commitments were approved.",
+            "organisation": "Northwind",
+            "organisation_evidence": "Northwind quarterly review.",
+            "tag_ids": [
+              "operations"
+            ],
+            "new_tags": [],
+            "keywords": [
+              "business review",
+              "Northwind",
+              "quarterly review",
+              "revenue growth",
+              "operating margin",
+              "customer retention",
+              "regional performance",
+              "monthly reviews",
+              "customer feedback",
+              "operations",
+              "Finance"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 173,
+              "eval_duration": 21356790000,
+              "prompt_eval_count": 788,
+              "prompt_eval_duration": 1537071000,
+              "load_duration": 22183200,
+              "total_duration": 24959964500,
+              "wall_seconds": 24.993872399965767
+            }
+          ]
+        },
+        {
+          "sample": "sparse.pptx",
+          "kind": "deck",
+          "wall_seconds": 0.052792,
+          "suggestion": {
+            "title": "",
+            "description": "Insufficient extracted text for a reliable description.",
+            "organisation": null,
+            "organisation_evidence": null,
+            "tag_ids": [],
+            "new_tags": [],
+            "keywords": [],
+            "limited": true,
+            "limitation": "Text-only analysis is limited; inspect the slide preview and original presentation."
+          },
+          "metrics": []
+        },
+        {
+          "sample": "technical.pptx",
+          "kind": "slide",
+          "wall_seconds": 26.102214,
+          "suggestion": {
+            "title": "Contoso Platform Architecture",
+            "description": "The slide describes the current prototype architecture of the Contoso platform, which uses FastAPI, SQLite, and local file storage. Browser clients request metadata over HTTP, and presentation files remain editable without modification. The prototype has been tested on Windows, with Linux container compatibility as a design goal. No cloud AI services are required.",
+            "organisation": "Contoso",
+            "organisation_evidence": "Contoso platform architecture",
+            "tag_ids": [
+              "cloud",
+              "operations"
+            ],
+            "new_tags": [],
+            "keywords": [
+              "Contoso",
+              "platform",
+              "architecture",
+              "FastAPI",
+              "SQLite",
+              "local file storage",
+              "HTTP",
+              "editable",
+              "Windows",
+              "Linux",
+              "container compatibility",
+              "Azure",
+              "cloud AI"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 180,
+              "eval_duration": 22670224000,
+              "prompt_eval_count": 466,
+              "prompt_eval_duration": 1270869000,
+              "load_duration": 33606600,
+              "total_duration": 26012785800,
+              "wall_seconds": 26.042769099993166
+            }
+          ]
+        },
+        {
+          "sample": "technical.pptx",
+          "kind": "slide",
+          "wall_seconds": 18.748148,
+          "suggestion": {
+            "title": "Architecture Review",
+            "description": "Discusses the current keyword search capabilities and proposes enhancements like persistent storage, deployment checks, and workload measurement before production rollout. Highlights the need for human approval in metadata generation.",
+            "organisation": "Contoso",
+            "organisation_evidence": "Contoso architecture review.",
+            "tag_ids": [
+              "cloud",
+              "operations"
+            ],
+            "new_tags": [],
+            "keywords": [
+              "architecture review",
+              "keyword search",
+              "semantic search",
+              "persistent storage",
+              "deployment checks",
+              "workload measurement",
+              "human approval",
+              "metadata generation"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 136,
+              "eval_duration": 17764683000,
+              "prompt_eval_count": 468,
+              "prompt_eval_duration": 780436000,
+              "load_duration": 25622200,
+              "total_duration": 18594644600,
+              "wall_seconds": 18.65386869997019
+            }
+          ]
+        },
+        {
+          "sample": "business.pptx",
+          "kind": "slide",
+          "wall_seconds": 20.043582,
+          "suggestion": {
+            "title": "Northwind Quarterly Review",
+            "description": "This slide presents the financial performance of Northwind for the past quarter, highlighting revenue growth, improved operating margin, stable customer retention, and varied regional performance. The team seeks further analysis to understand the causes behind regional differences.",
+            "organisation": "Northwind",
+            "organisation_evidence": "Northwind quarterly review.",
+            "tag_ids": [
+              "operations"
+            ],
+            "new_tags": [],
+            "keywords": [
+              "Northwind",
+              "quarterly review",
+              "revenue growth",
+              "operating margin",
+              "customer retention",
+              "regional performance",
+              "further analysis"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 145,
+              "eval_duration": 19071224000,
+              "prompt_eval_count": 464,
+              "prompt_eval_duration": 726964000,
+              "load_duration": 39262600,
+              "total_duration": 19863347300,
+              "wall_seconds": 19.917307100025937
+            }
+          ]
+        },
+        {
+          "sample": "business.pptx",
+          "kind": "slide",
+          "wall_seconds": 25.544996,
+          "suggestion": {
+            "title": "Northwind Next Steps",
+            "description": "The slide outlines the next steps for the Northwind project, including monthly regional performance reviews, documentation of customer feedback, and the involvement of Operations in the reporting process. Finance will validate the next reporting pack. There are no new budget, delivery date, or staffing commitments. A proposed workshop is subject to client agreement, and no target revenue increase for the next quarter is established.",
+            "organisation": "Northwind",
+            "organisation_evidence": "Northwind next steps.",
+            "tag_ids": [
+              "operations"
+            ],
+            "new_tags": [],
+            "keywords": [
+              "Northwind",
+              "next steps",
+              "regional performance",
+              "customer feedback",
+              "Operations",
+              "Finance",
+              "reporting pack",
+              "workshop",
+              "client agreement",
+              "revenue increase"
+            ],
+            "limited": false,
+            "limitation": ""
+          },
+          "metrics": [
+            {
+              "eval_count": 184,
+              "eval_duration": 24553607000,
+              "prompt_eval_count": 462,
+              "prompt_eval_duration": 843127000,
+              "load_duration": 31209800,
+              "total_duration": 25454453400,
+              "wall_seconds": 25.485309800016694
+            }
+          ]
+        },
+        {
+          "sample": "sparse.pptx",
+          "kind": "slide",
+          "wall_seconds": 0.047577,
+          "suggestion": {
+            "title": "",
+            "description": "Insufficient extracted text for a reliable description.",
+            "organisation": null,
+            "organisation_evidence": null,
+            "tag_ids": [],
+            "new_tags": [],
+            "keywords": [],
+            "limited": true,
+            "limitation": "Text-only analysis is limited; inspect the slide preview and original presentation."
+          },
+          "metrics": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "real_library_decks": 1,
+  "real_library_slides": 17,
+  "actual_png_previews": 17,
+  "checks": [
+    "deck grid/table",
+    "slide grid/table",
+    "Tag Manager",
+    "exact search",
+    "search selection refresh persistence",
+    "ordered builder review"
+  ],
+  "runtime_exceptions": 0,
+  "database_edits": false
+}

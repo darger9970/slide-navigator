@@ -217,6 +217,8 @@ tempCodeRunnerFile.py
 /thumbnails/
 /indexes/
 /credentials/
+/.validation-phase-*/
+/.test-temp-*/
 *.ppt
 *.pptx
 *.zip

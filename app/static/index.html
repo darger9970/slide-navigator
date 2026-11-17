@@ -24,6 +24,7 @@
         <kbd>Enter</kbd>
       </form>
       <div class="header-actions">
+        <button class="button button-secondary create-deck" id="create-deck" disabled>Create Deck (0)</button>
         <button class="header-icon" id="header-settings" aria-label="Settings" title="Settings">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="m19.4 15 .1.1 1.1.9-1.1 1.9-1.3-.5a7.7 7.7 0 0 1-1.5.9l-.2 1.4h-2.2l-.3-1.4a7.7 7.7 0 0 1-1.6-.9l-1.3.5-1.1-1.9 1.1-.9a6 6 0 0 1 0-1.8l-1.1-.9 1.1-1.9 1.3.5a7.7 7.7 0 0 1 1.6-.9l.3-1.4h2.2l.2 1.4a7.7 7.7 0 0 1 1.5.9l1.3-.5 1.1 1.9-1.1.9a6 6 0 0 1-.1 1.8Z" transform="translate(-1 -1)"></path></svg>
         </button>
@@ -39,10 +40,24 @@
             <span>Home</span>
           </button>
           <div class="nav-group-label">MY WORK</div>
-          <button class="nav-link active" data-page="library" aria-current="page">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v16M9 7v13m4-16v16m4-11v11m4-7v7"></path></svg>
-            <span>Slide Library</span>
+          <button class="nav-link active" data-page="decks" aria-current="page">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"></rect><path d="M8 4v16m4-12h5m-5 4h5"></path></svg>
+            <span>Decks</span>
           </button>
+          <details class="nav-filters" open>
+            <summary>Deck filters</summary>
+            <div id="deck-tag-filters"><p>Loading tags…</p></div>
+            <button class="text-button" id="clear-deck-filters">Clear Filters</button>
+          </details>
+          <button class="nav-link" data-page="slides">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v16M9 7v13m4-16v16m4-11v11m4-7v7"></path></svg>
+            <span>Slides</span>
+          </button>
+          <details class="nav-filters" open>
+            <summary>Slide filters</summary>
+            <div id="slide-tag-filters"><p>Loading tags…</p></div>
+            <button class="text-button" id="clear-slide-filters">Clear Filters</button>
+          </details>
           <button class="nav-link" data-page="import">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v1M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="m12 11 3 3-3 3m3-3H8"></path></svg>
             <span>Import</span>
@@ -76,67 +91,87 @@
               <div class="welcome-copy">
                 <span class="eyebrow">YOUR PRESENTATION WORKSPACE</span>
                 <h2>Make your slide history useful again.</h2>
-                <p>Keep historical presentations close at hand. Import your files to get started; slide browsing, search, and deck assembly will build on your local library.</p>
+                <p>Keep historical presentations close at hand. Import your files to browse decks, review slide previews, and edit descriptions in your local library.</p>
                 <button class="button button-primary" data-go="import">Import presentations <span aria-hidden="true">→</span></button>
               </div>
               <div class="welcome-art" aria-hidden="true"><svg viewBox="0 0 190 135"><rect x="20" y="21" width="128" height="86" rx="3"></rect><path d="M84 108v13m-22 0h44"></path><rect x="38" y="37" width="80" height="54" rx="2"></rect><path d="M48 51h36M48 61h57M48 71h44"></path><circle cx="144" cy="88" r="25"></circle><path d="m162 106 15 15"></path></svg></div>
             </div>
             <div class="home-section-heading"><div><h2>Quick access</h2><p>Continue where you left off.</p></div></div>
             <div class="quick-links">
-              <button class="quick-link" data-go="library"><span class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v16M9 7v13m4-16v16m4-11v11m4-7v7"></path></svg></span><span><strong>Slide Library</strong><small>Browse your local presentation library</small></span><span class="quick-arrow">›</span></button>
+              <button class="quick-link" data-go="decks"><span class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"></rect><path d="M8 4v16m4-12h5m-5 4h5"></path></svg></span><span><strong>Decks</strong><small>Browse imported presentations</small></span><span class="quick-arrow">›</span></button>
+              <button class="quick-link" data-go="slides"><span class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v16M9 7v13m4-16v16m4-11v11m4-7v7"></path></svg></span><span><strong>Slides</strong><small>Browse individual slides and extracted text</small></span><span class="quick-arrow">›</span></button>
               <button class="quick-link" data-go="import"><span class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0L7 9m5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"></path></svg></span><span><strong>Import presentations</strong><small>Add PowerPoint files or a folder</small></span><span class="quick-arrow">›</span></button>
             </div>
           </div>
         </section>
 
-        <section class="page" id="page-library" aria-labelledby="library-title">
-          <div class="page-heading library-heading">
-            <div><div class="breadcrumb">Home <span>›</span> My Work</div><h1 id="library-title">Slide Library</h1></div>
+        <section class="page" id="page-decks" aria-labelledby="decks-title">
+          <div class="page-heading">
+            <div><div class="breadcrumb">Home <span>›</span> My Work</div><h1 id="decks-title">Decks</h1><p class="page-description">Search, filter, and edit your imported presentation library.</p></div>
             <button class="button button-primary" data-go="import"><span class="plus">＋</span> Import</button>
           </div>
           <div class="library-toolbar">
             <label class="library-search">
               <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg>
-              <input id="library-search" type="search" placeholder="Search presentations or slides..." aria-label="Search presentations or slides">
-              <kbd>Ctrl K</kbd>
+              <input id="deck-search" type="search" placeholder="Search decks..." aria-label="Search decks">
             </label>
-            <label class="filter-control" title="Filter by import status">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6.2 7.3v5.5l-3.6 1.8v-7.3z"></path></svg>
-              <span class="sr-only">Filter by import status</span>
-              <select id="status-filter" aria-label="Filter by import status">
-                <option value="all">All statuses</option>
-                <option value="imported">Imported</option>
-                <option value="processing">Processing</option>
-                <option value="failed">Failed</option>
-              </select>
-            </label>
-            <div class="view-toggle" role="group" aria-label="Library layout">
-              <button class="view-button active" id="grid-view" aria-label="Thumbnail grid view" aria-pressed="true" title="Thumbnail grid">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="1"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="1"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="1"></rect></svg>
-              </button>
-              <button class="view-button" id="table-view" aria-label="Compact table view" aria-pressed="false" title="Compact table">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h16M9 5v14"></path></svg>
-              </button>
-            </div>
+            <label class="filter-field"><span>Organisation</span><select id="deck-organisation-filter" aria-label="Filter decks by organisation"><option value="">All organisations</option></select></label>
+            <label class="filter-field"><span>Year</span><select id="deck-year-filter" aria-label="Filter decks by year"><option value="">All years</option></select></label>
+            <button class="button button-secondary" id="refresh-decks">Refresh</button>
+            <button class="button button-secondary" id="deck-view-toggle" aria-pressed="false">Card view</button>
           </div>
-          <div class="library-meta"><span id="library-count">0 presentations</span><label>Sort by <select id="sort-select" aria-label="Sort presentations"><option value="name">Name</option><option value="recent">Recently added</option><option value="slides">Slide count</option></select></label></div>
-          <div class="library-content grid-layout" id="library-content">
-            <div class="library-empty" id="library-empty">
-              <div class="empty-slide-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="25" rx="2"></rect><path d="M24 33v6m-8 0h16m-21-26h26"></path></svg>
-              </div>
-              <h2 id="empty-title">Your slide library is empty</h2>
-              <p id="empty-description">Import presentations to see their slides, source folders, and import status here.</p>
-              <button class="button button-secondary" data-go="import">Import presentations <span aria-hidden="true">→</span></button>
-            </div>
-          </div>
-          <div class="library-table-wrap hidden" id="library-table-wrap" aria-label="Presentation table view">
+          <div class="selection hidden" id="decks-error" role="status"></div>
+          <div class="library-meta"><span id="decks-count" aria-live="polite">Loading decks…</span></div>
+          <div class="library-meta selection-toolbar"><span id="selected-deck-count" role="status">0 decks selected</span><button class="text-button" id="clear-deck-selection" disabled>Clear Selection</button><button class="button button-secondary" id="delete-decks" disabled>Delete Selected (0)</button></div>
+          <div class="slide-grid hidden" id="deck-grid"></div>
+          <div class="library-table-wrap">
             <table class="library-table">
-              <thead><tr><th><button data-sort="name">Presentation name <span>↕</span></button></th><th><button data-sort="slides">Slides <span>↕</span></button></th><th>Source folder</th><th>Import status</th></tr></thead>
-              <tbody id="library-table-body"></tbody>
+              <thead><tr>
+                <th><button type="button" data-sort-kind="decks" data-sort="name">Deck title</button></th>
+                <th><button type="button" data-sort-kind="decks" data-sort="original_filename">Original filename</button></th>
+                <th><button type="button" data-sort-kind="decks" data-sort="organisation">Organisation</button></th>
+                <th><button type="button" data-sort-kind="decks" data-sort="year">Year</button></th>
+                <th><button type="button" data-sort-kind="decks" data-sort="slide_count">Slides</button></th>
+                <th><button type="button" data-sort-kind="decks" data-sort="imported_at">Imported</button></th>
+                <th><button type="button" data-sort-kind="decks" data-sort="description">Description</button></th>
+              </tr></thead>
+              <tbody id="deck-table-body"></tbody>
             </table>
-            <div class="table-empty">No presentations match your current search or filter.</div>
+            <div class="table-empty" id="decks-empty">No presentations imported yet. Choose Import to add PPTX, PPT or ZIP files.</div>
           </div>
+          <div class="pagination"><button class="button button-secondary" id="decks-previous" disabled>Previous</button><span id="decks-page"></span><button class="button button-secondary" id="decks-next" disabled>Next</button></div>
+        </section>
+
+        <section class="page hidden" id="page-slides" aria-labelledby="slides-title">
+          <div class="page-heading">
+            <div><div class="breadcrumb">Home <span>›</span> My Work</div><h1 id="slides-title">Slides</h1><p class="page-description">Browse and edit slide titles and descriptions from your library.</p></div>
+            <button class="button button-primary" data-go="import"><span class="plus">＋</span> Import</button>
+          </div>
+          <div class="library-toolbar">
+            <label class="library-search">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg>
+              <input id="slide-search" type="search" placeholder="Search slide text or deck name..." aria-label="Search slide text or deck name">
+            </label>
+            <label class="filter-field"><span>Organisation</span><select id="slide-organisation-filter" aria-label="Filter slides by organisation"><option value="">All organisations</option></select></label>
+            <label class="filter-field"><span>Year</span><select id="slide-year-filter" aria-label="Filter slides by year"><option value="">All years</option></select></label>
+            <label class="filter-field"><span>Source deck</span><select id="slide-deck-filter" aria-label="Filter slides by source deck"><option value="">All decks</option></select></label>
+            <div class="view-toggle" role="group" aria-label="Slide layout">
+              <button class="view-button active" id="slide-grid-view" aria-label="Slide thumbnail grid" aria-pressed="true" title="Thumbnail grid"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="1"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="1"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="1"></rect></svg></button>
+              <button class="view-button" id="slide-table-view" aria-label="Slide compact table" aria-pressed="false" title="Compact table"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h16M9 5v14"></path></svg></button>
+            </div>
+          </div>
+          <div class="selection hidden" id="slides-error" role="status"></div>
+          <div class="library-meta"><span id="slides-count" aria-live="polite">Loading slides…</span><button class="button button-secondary" id="refresh-slides">Refresh</button></div>
+          <div class="library-meta selection-toolbar"><span id="selected-count" role="status">0 selected</span><button class="text-button" id="clear-selection" disabled>Clear Selection</button><button class="button button-secondary" id="delete-slides" disabled>Delete Selected (0)</button></div>
+          <p class="selection-help">Click a thumbnail to select or deselect. Use Preview / edit to open details. Selection is kept while you browse this session.</p>
+          <label class="filter-field slide-sort"><span>Sort slides</span><select id="slide-sort"><option value="slide_number">Slide number</option><option value="title">Title</option><option value="deck_name">Source deck</option><option value="imported_at">Imported</option></select><select id="slide-sort-order" aria-label="Slide sort direction"><option value="asc">Ascending</option><option value="desc">Descending</option></select></label>
+          <details class="tag-counts"><summary>Slide counts by tag (whole library)</summary><div id="slide-tag-counts"></div></details>
+          <div class="slide-grid" id="slide-grid"></div>
+          <div class="library-table-wrap hidden" id="slide-table-wrap">
+            <table class="library-table"><thead><tr><th>Slide title and number</th><th>Presentation</th><th>Description</th><th>Preview</th></tr></thead><tbody id="slide-table-body"></tbody></table>
+          </div>
+          <div class="library-empty hidden" id="slides-empty"><div class="empty-slide-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="25" rx="2"></rect><path d="M24 33v6m-8 0h16m-21-26h26"></path></svg></div><h2>No slides found</h2><p>Import a presentation to extract its slides and text.</p><button class="button button-secondary" data-go="import">Import presentations</button></div>
+          <div class="pagination"><button class="button button-secondary" id="slides-previous" disabled>Previous</button><span id="slides-page"></span><button class="button button-secondary" id="slides-next" disabled>Next</button></div>
         </section>
 
         <section class="page hidden" id="page-import" aria-labelledby="import-title">
@@ -151,21 +186,46 @@
             <input id="file-input" type="file" accept=".ppt,.pptx,.zip" multiple hidden>
             <input id="folder-input" type="file" webkitdirectory directory multiple hidden>
           </div>
-          <div class="notice"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5m0-8h.01"></path></svg><div><strong>Import setup only</strong><p>File selection is ready, but importing and indexing presentation contents will be added in a later milestone. Nothing is uploaded or copied yet.</p></div></div>
-          <div class="selection hidden" id="selection" aria-live="polite"></div>
+          <div class="storage-control">
+            <label for="storage-mode">Storage mode</label>
+            <select id="storage-mode"><option value="managed_copy">Managed copy (recommended)</option><option value="reference" disabled>Reference (not available for browser uploads)</option></select>
+            <small>Browser uploads do not expose a trustworthy absolute file path. Reference mode is deferred.</small>
+          </div>
+          <div id="selection" class="selection hidden" role="status"></div>
+          <div class="import-progress hidden" id="import-progress" aria-live="polite">
+            <div class="progress-heading"><strong id="progress-title">Preparing import…</strong><span id="progress-value">0%</span></div>
+            <label for="progress-bar">Overall deck progress</label>
+            <progress id="progress-bar" max="100"></progress>
+            <p id="deck-progress-count">Discovering presentations…</p>
+            <div class="progress-heading"><strong id="current-deck-name">No current presentation</strong><span id="slide-progress-value">Waiting</span></div>
+            <label for="slide-progress-bar">Current deck slide progress</label>
+            <progress id="slide-progress-bar" max="100"></progress>
+            <p id="slide-progress-count">Slide total not yet known</p>
+            <div class="progress-heading"><span id="import-stage">Preparing</span><span>Elapsed <time id="import-elapsed">00:00:00</time></span></div>
+            <p id="progress-message"></p>
+            <details id="import-review-panel" open><summary id="import-review-heading">Per-file results</summary><ul id="progress-items"></ul></details>
+            <div class="pagination"><button class="button button-secondary" id="import-items-previous" disabled>Previous results</button><span id="import-items-page"></span><button class="button button-secondary" id="import-items-next" disabled>Next results</button></div>
+            <button class="text-button hidden" id="defer-import-review">Review later</button>
+          </div>
+          <div class="notice"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5m0-8h.01"></path></svg><div><strong>Local, non-destructive import</strong><p>The original presentation is preserved. A managed copy is stored locally; ZIP members are checked against configured extraction limits.</p></div></div>
+          <div class="import-history">
+            <div class="history-heading"><div><h2>Import history</h2><p>Recent jobs and per-file outcomes.</p></div><button class="button button-secondary" id="refresh-history">Refresh</button></div>
+            <div class="library-table-wrap"><table class="library-table"><thead><tr><th>Started</th><th>Status</th><th>Files</th><th>Slides</th><th>Results</th></tr></thead><tbody id="import-history-body"></tbody></table><div class="table-empty" id="history-empty">No import jobs yet.</div></div>
+          </div>
         </section>
 
         <section class="page hidden" id="page-search" aria-labelledby="search-title">
           <div class="page-heading"><div><div class="breadcrumb">Home <span>›</span> My Work</div><h1 id="search-title">Search</h1><p class="page-description">Find a phrase, topic, or visual idea across your presentation library.</p></div></div>
           <form class="search-page-form" id="search-page-form"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg><input id="search-page-input" type="search" placeholder="Search slides and presentations..." aria-label="Search slides and presentations"><button class="button button-primary">Search</button></form>
-          <div class="notice"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5m0-8h.01"></path></svg><div><strong>Slide search is not available yet</strong><p>Import and indexing will be added in a later milestone. Presentation contents are not sent to any external service.</p></div></div>
+          <div class="notice"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5m0-8h.01"></path></svg><div><strong>Keyword and semantic search are planned for Milestone 3</strong><p>Your presentation contents remain in the local library and are not sent to any external service.</p></div></div>
         </section>
 
         <section class="page hidden" id="page-builder" aria-labelledby="builder-title">
           <div class="page-heading"><div><div class="breadcrumb">Home <span>›</span> My Work</div><h1 id="builder-title">Deck Builder</h1><p class="page-description">Assemble selected slides into a new editable presentation.</p></div></div>
-          <div class="feature-empty"><div class="empty-slide-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 10h34M7 20h34M7 30h34M7 40h34"></path><path d="m13 5-6 5 6 5m22 0 6 5-6 5m-22 0-6 5 6 5"></path></svg></div><h2>Deck Builder is coming soon</h2><p>Once presentations can be indexed, you’ll be able to select slides and export an editable PowerPoint deck.</p><button class="button button-secondary" data-go="library">Go to Slide Library</button></div>
+          <div class="feature-empty"><div class="empty-slide-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 10h34M7 20h34M7 30h34M7 40h34"></path><path d="m13 5-6 5 6 5m22 0 6 5-6 5m-22 0-6 5 6 5"></path></svg></div><h2>Deck Builder is coming soon</h2><p>Once presentations can be indexed, you’ll be able to select slides and export an editable PowerPoint deck.</p><button class="button button-secondary" data-go="decks">Go to Decks</button></div>
         </section>
 
+        <section class="page hidden" id="page-tags" aria-label="Tag Manager"></section>
         <section class="page hidden" id="page-settings" aria-labelledby="settings-title">
           <div class="page-heading"><div><div class="breadcrumb">Home <span>›</span> Preferences</div><h1 id="settings-title">Settings</h1><p class="page-description">Manage local AI connectivity and your workspace.</p></div></div>
           <div class="settings-card">
@@ -178,6 +238,79 @@
         </section>
       </main>
     </div>
+    <dialog class="slide-dialog" id="slide-dialog">
+      <div class="dialog-heading"><div><span class="eyebrow">SLIDE DETAILS</span><h2 id="dialog-title">Slide</h2></div><button class="header-icon dialog-close" id="dialog-close" aria-label="Close slide details">×</button></div>
+      <p class="dialog-source" id="dialog-source"></p>
+      <img class="dialog-thumbnail" id="dialog-thumbnail" alt="Slide preview">
+      <form id="slide-edit-form" class="metadata-form">
+        <div id="slide-detail-tags" class="tag-list"></div>
+        <fieldset id="slide-tag-editor" class="tag-editor"><legend>Assigned tags</legend></fieldset>
+        <label>Slide title<input id="slide-edit-title" maxlength="250" required></label>
+        <label>Slide description<textarea id="slide-edit-description" rows="4" maxlength="20000"></textarea></label>
+        <div class="metadata-form-footer"><span class="metadata-status" id="slide-edit-status"></span><span class="metadata-error" id="slide-edit-error" role="status"></span><button class="button button-primary" type="submit">Save changes</button></div>
+      </form>
+      <h3>Extracted text</h3><pre id="dialog-text"></pre>
+      <h3>Speaker notes</h3><pre id="dialog-notes"></pre>
+      <p class="dialog-rendering" id="dialog-rendering"></p>
+    </dialog>
+    <dialog class="slide-dialog deck-dialog" id="deck-dialog">
+      <div class="dialog-heading"><div><span class="eyebrow">DECK DETAILS</span><h2 id="deck-dialog-title">Presentation</h2></div><button class="header-icon dialog-close" id="deck-dialog-close" aria-label="Close deck details">×</button></div>
+      <p class="dialog-source" id="deck-dialog-source"></p>
+      <div class="management-actions"><span id="thumbnail-retry-status" role="status"></span><button class="button button-secondary" id="regenerate-thumbnails" type="button">Regenerate thumbnails</button></div>
+      <form id="deck-edit-form" class="metadata-form">
+        <div id="deck-detail-tags" class="tag-list"></div>
+        <fieldset id="deck-tag-editor" class="tag-editor"><legend>Assigned tags</legend></fieldset>
+        <label>Deck title<input id="deck-edit-title" maxlength="250" required></label>
+        <div class="metadata-form-row">
+          <label>Organisation<input id="deck-edit-organisation" list="organisation-options" maxlength="200"><datalist id="organisation-options"></datalist></label>
+          <label>Year<input id="deck-edit-year" type="number" min="1900" max="2100" step="1"></label>
+        </div>
+        <label>Deck description<textarea id="deck-edit-description" rows="4" maxlength="20000"></textarea></label>
+        <div class="metadata-form-row"><label>Author<input id="deck-edit-author" maxlength="250"></label><label>Subject<input id="deck-edit-subject" maxlength="1000"></label></div>
+        <label>Subtitle<input id="deck-edit-subtitle" maxlength="2000"></label>
+        <label>Review status<select id="deck-edit-review-status"><option>Not Reviewed</option><option>Reviewed</option></select></label>
+        <p id="deck-metadata-provenance" class="metadata-provenance"></p>
+        <details><summary>Original PowerPoint metadata and provenance</summary><pre id="deck-raw-metadata"></pre></details>
+        <button class="button button-secondary" type="button" id="mark-deck-reviewed">Save and mark reviewed</button>
+        <div class="metadata-form-footer"><span class="metadata-status" id="deck-edit-status"></span><span class="metadata-error" id="deck-edit-error" role="status"></span><button class="button button-primary" type="submit">Save changes</button></div>
+      </form>
+      <div class="deck-slides-heading"><h3>Constituent slides</h3><span id="deck-slides-count"></span></div>
+      <ul class="deck-slides-list" id="deck-slides-list"></ul>
+      <div class="pagination deck-slides-pagination"><button class="button button-secondary" id="deck-slides-previous" disabled>Previous</button><span id="deck-slides-page"></span><button class="button button-secondary" id="deck-slides-next" disabled>Next</button></div>
+    </dialog>
+    <dialog id="selected-slides-dialog" class="slide-dialog selected-slides-dialog" aria-labelledby="selected-slides-title">
+      <div class="dialog-heading"><h2 id="selected-slides-title">Selected Slides</h2><button class="button button-secondary" id="close-selected-slides">Close</button></div>
+      <p>Drag slides to reorder, or use Move up / Move down. This order is kept when you confirm.</p>
+      <ol id="selected-slides-list"></ol>
+      <p id="review-status" role="status"></p>
+      <p class="notice">PowerPoint export is coming in Milestone 4. Confirming only prepares the slide order; it does not create a presentation.</p>
+      <button class="button button-primary" id="confirm-slide-order" disabled>Confirm slide order</button>
+    </dialog>
+    <dialog id="delete-library-dialog" class="slide-dialog" aria-labelledby="delete-library-title">
+      <h2 id="delete-library-title">Delete from library?</h2>
+      <p id="delete-library-summary"></p>
+      <p>Original PowerPoint files and managed presentation copies will be preserved.</p>
+      <p id="delete-library-error" role="alert"></p>
+      <div class="management-actions"><button class="button button-secondary" id="cancel-library-delete" autofocus>Cancel</button><button class="button button-primary" id="confirm-library-delete">Delete from library</button></div>
+    </dialog>
+    <dialog id="new-tag-dialog" class="slide-dialog" aria-labelledby="new-tag-title">
+      <h2 id="new-tag-title">Create and assign tag</h2>
+      <form id="new-tag-form" class="metadata-form">
+        <label>Tag category<select id="new-tag-category"></select></label>
+        <label>Tag name<input id="new-tag-name" maxlength="100" required></label>
+        <p id="new-tag-error" role="alert"></p>
+        <div class="management-actions"><button class="button button-secondary" type="button" id="cancel-new-tag">Cancel</button><button class="button button-primary" type="submit">Create and assign</button></div>
+      </form>
+    </dialog>
+    <div id="library-management-status" class="management-status hidden" role="status" aria-live="polite"></div>
+    <script src="/static/taxonomy.js" defer></script>
+    <script src="/static/search.js" defer></script>
+    <script src="/static/builder.js" defer></script>
+    <script src="/static/selection.js" defer></script>
+    <script src="/static/management.js" defer></script>
+    <script src="/static/import-progress.js" defer></script>
+    <script src="/static/ai.js" defer></script>
+    <script src="/static/thumbnails.js" defer></script>
     <script src="/static/app.js" defer></script>
   </body>
 </html>

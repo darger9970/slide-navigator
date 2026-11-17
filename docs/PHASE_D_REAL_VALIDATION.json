@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "real_libreoffice_opening": true,
+  "synthetic_sources": 2,
+  "native_slides": 2,
+  "retained_objects": [
+    "editable text/shapes",
+    "charts and embedded workbooks",
+    "tables",
+    "images",
+    "OLE embedded workbooks",
+    "different themes/layouts",
+    "speaker notes",
+    "external hyperlinks"
+  ],
+  "export_seconds": 5.824,
+  "total_seconds": 16.771,
+  "visual_comparisons": [
+    {
+      "position": 1,
+      "deck": "Source A",
+      "mean_absolute_pixel_error": 0.0,
+      "size": [
+        640,
+        480
+      ],
+      "exact_match": true
+    },
+    {
+      "position": 2,
+      "deck": "Source B",
+      "mean_absolute_pixel_error": 0.0,
+      "size": [
+        640,
+        480
+      ],
+      "exact_match": true
+    }
+  ],
+  "export_path": ".validation-phase-d\\1794916500176815800\\indexes\\exports\\0398898b-2a5e-4f25-95fb-9f56febaf5f1\\Validated native deck.pptx",
+  "sha256": "ae50a09a483ad98dd79cfa325614ddc8fbd93c14d9724e3bd406c8ec99dfd9dc",
+  "warnings": [
+    "External hyperlinks are retained and may open outside Slide Navigator.",
+    "Fonts must be available on the viewing system unless embedded. Native objects remain editable; installed fonts can affect appearance."
+  ]
+}

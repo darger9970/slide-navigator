@@ -18,8 +18,16 @@ def make_settings(tmp_path: Path, ollama_url: str = "http://ollama.test") -> Set
         imports_dir=data_dir / "imports",
         thumbnails_dir=data_dir / "thumbnails",
         indexes_dir=data_dir / "indexes",
+        staging_dir=data_dir / "staging",
         ollama_base_url=ollama_url,
         ollama_required_models=("qwen3:4b", "nomic-embed-text"),
+        storage_mode="managed_copy",
+        max_upload_file_bytes=5_000_000,
+        max_archive_member_bytes=2_000_000,
+        max_archive_total_bytes=5_000_000,
+        max_archive_files=100,
+        worker_timeout_seconds=10,
+        rendering_enabled=False,
     )
 
 
@@ -32,6 +40,7 @@ def test_health_endpoint_initializes_local_storage(tmp_path: Path) -> None:
     assert settings.imports_dir.is_dir()
     assert settings.thumbnails_dir.is_dir()
     assert settings.indexes_dir.is_dir()
+    assert settings.staging_dir.is_dir()
 
 
 def test_database_initialization_is_idempotent(tmp_path: Path) -> None:
@@ -44,7 +53,11 @@ def test_database_initialization_is_idempotent(tmp_path: Path) -> None:
         result = connection.execute(
             "SELECT value FROM app_metadata WHERE key = 'schema_version'"
         ).fetchone()
-    assert result == ("1",)
+    assert result == ("12",)
+    with sqlite3.connect(database_path) as connection:
+        assert connection.execute(
+            "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'decks'"
+        ).fetchone() == ("decks",)
 
 
 def test_ollama_status_reports_required_models(monkeypatch, tmp_path: Path) -> None:

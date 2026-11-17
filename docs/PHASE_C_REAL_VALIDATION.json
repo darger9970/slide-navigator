@@ -1,0 +1,33 @@
+{
+  "model": "nomic-embed-text",
+  "sample": "Three synthetic presentations, one slide each; no user content sent externally.",
+  "index_seconds": 3.778,
+  "seconds_per_document": 0.63,
+  "dimensions": [
+    768
+  ],
+  "status": "completed",
+  "completed": 6,
+  "failed": 0,
+  "queries": [
+    {
+      "query": "telecommunications billing revenue leakage",
+      "expected": "Telecom transformation",
+      "top_deck": "Telecom transformation",
+      "seconds": 0.046
+    },
+    {
+      "query": "Azure agent architecture",
+      "expected": "Cloud architecture",
+      "top_deck": "Cloud architecture",
+      "seconds": 0.045
+    },
+    {
+      "query": "organisational governance transformation",
+      "expected": "Operating model",
+      "top_deck": "Operating model",
+      "seconds": 0.047
+    }
+  ],
+  "all_expected_top_ranked": true
+}

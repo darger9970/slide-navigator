@@ -1,0 +1,65 @@
+{
+  "before": {
+    "tables": {
+      "decks": {
+        "rows": 1,
+        "sha256": "3e9597a83bc4244b9305937b031cf06ecb24003d4bbb5dbdb616fbc98b503a3f"
+      },
+      "slides": {
+        "rows": 17,
+        "sha256": "b2566ff3e0076dcb21600c71077e6957b2905e3647239bac243cf500849319f8"
+      },
+      "tags": {
+        "rows": 2,
+        "sha256": "1d2c4565d4f9dcb06bbf04fe12c85c881e03a06681f566bdcc2da95dc11cb296"
+      },
+      "deck_tags": {
+        "rows": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "slide_tags": {
+        "rows": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "tag_aliases": {
+        "rows": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "edit_history": {
+        "rows": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "source_hashes": [
+      "2860bc7625d8a3f2d1787ab9a89deddca9a5674c3b7eaef8538d0f0041efa3bd"
+    ],
+    "schema": "10",
+    "foreign_key_errors": []
+  },
+  "checks": [
+    {
+      "status": "passed",
+      "schema": "12",
+      "tables_unchanged": true,
+      "source_files_unchanged": true,
+      "foreign_key_errors": 0,
+      "pid": 22160
+    },
+    {
+      "status": "passed",
+      "schema": "12",
+      "tables_unchanged": true,
+      "source_files_unchanged": true,
+      "foreign_key_errors": 0,
+      "pid": 35216
+    },
+    {
+      "status": "passed",
+      "schema": "12",
+      "tables_unchanged": true,
+      "source_files_unchanged": true,
+      "foreign_key_errors": 0,
+      "pid": 37620
+    }
+  ]
+}
